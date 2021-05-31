@@ -22,12 +22,28 @@ dbDelta( $sql );
 function insertdata_in_database($title, $time, $after_expiry, $message, $created_at){
     global $wpdb;
     $wpdb->insert('wp_countdown', array(
-                'id'            => '',
-                'title'         =>$title,
-                'time'          =>$time,
-                'after_expiry'  =>$after_expiry,
-                'message'       =>$message,
-                'created_at'    => $created_at
-              ),array('%s')
+        'title'         =>$title,
+        'time'          =>$time,
+        'after_expiry'  =>$after_expiry,
+        'message'       =>$message,
+        'created_at'    => $created_at
+    ),array('%s')
     );
+}
+
+function updatedata_in_database($id , $title, $time, $after_expiry, $message, $created_at){
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'countdown';
+    $data = array(
+        'title'         => $title,
+        'time'          => $time,
+        'after_expiry'  => $after_expiry,
+        'message'       => $message,
+        'created_at'    => $created_at
+    );
+    $where = array(
+        'id' => $id
+    );
+    $wpdb->update($table_name, $data, $where);
+    // var_dump(485451);die;
 }

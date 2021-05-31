@@ -1,5 +1,14 @@
 jQuery(document).ready(function($) {
-    $('#expiry-msg').hide();
+    // $('#expiry-msg').hide();
+    $("#after_expire").on('load',function() {
+        if ($(this).val() == "message") {
+            $('#expiry-msg').show();
+        } else {
+            $('#expiry-msg').hide();
+        }
+    });
+    
+
     $("#after_expire").on('change',function() {
     if ($(this).val() == "message") {
         $('#expiry-msg').show();

@@ -14,7 +14,7 @@ function custom_admin_scripts() {
     // var_dump(global $wpdb);die;
     
     wp_enqueue_style('custom-css', plugins_url('assets/css/style.css',__FILE__ ),'', null);
-    wp_enqueue_script('custom-js', plugins_url('assets/js/script.js?v=123',__FILE__),'', null);
+    wp_enqueue_script('custom-js', plugins_url('assets/js/script.js?v=123541254',__FILE__),'', null);
     wp_localize_script( 'custom-js', 'frontend_ajax_object',
     array( 
         'ajaxurl' => plugins_url('ajax_working.php',__FILE__)
